@@ -622,7 +622,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
 
     public void requestDirection() {
-       // Snackbar.make(btnRequestDirection, "Direction Requesting...", Snackbar.LENGTH_SHORT).show();
+        // Snackbar.make(btnRequestDirection, "Direction Requesting...", Snackbar.LENGTH_SHORT).show();
         GoogleDirection.withServerKey(serverKey)
                 .from(origin)
                 .to(destination)
@@ -635,7 +635,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
     @Override
     public void onDirectionSuccess(Direction direction, String rawBody) {
-       // Snackbar.make(btnRequestDirection, "Success with status : " + direction.getStatus(), Snackbar.LENGTH_SHORT).show();
+        // Snackbar.make(btnRequestDirection, "Success with status : " + direction.getStatus(), Snackbar.LENGTH_SHORT).show();
         if (direction.isOK()) {
             mMap.addMarker(new MarkerOptions().position(origin));
             mMap.addMarker(new MarkerOptions().position(destination));
@@ -647,13 +647,13 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
                 mMap.addPolyline(DirectionConverter.createPolyline(this, directionPositionList, 5, Color.parseColor(color)));
             }
 
-          //  btnRequestDirection.setVisibility(View.GONE);
+            //  btnRequestDirection.setVisibility(View.GONE);
         }
     }   // onDirectionSuccess
 
     @Override
     public void onDirectionFailure(Throwable t) {
-      //  Snackbar.make(btnRequestDirection, t.getMessage(), Snackbar.LENGTH_SHORT).show();
+        //  Snackbar.make(btnRequestDirection, t.getMessage(), Snackbar.LENGTH_SHORT).show();
     }   // onDriectionFeilure
 
 
