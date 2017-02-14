@@ -33,17 +33,17 @@ public final class R {
 		public static final int zOrderOnTop = 0x7f0100e7;
 	}
 	public static final class id {
-		public static final int hybrid = 0x7f0c003a;
-		public static final int none = 0x7f0c0012;
-		public static final int normal = 0x7f0c000e;
-		public static final int satellite = 0x7f0c003b;
-		public static final int terrain = 0x7f0c003c;
+		public static final int hybrid = 0x7f0d003a;
+		public static final int none = 0x7f0d0012;
+		public static final int normal = 0x7f0d000e;
+		public static final int satellite = 0x7f0d003b;
+		public static final int terrain = 0x7f0d003c;
 	}
 	public static final class integer {
-		public static final int google_play_services_version = 0x7f0a0006;
+		public static final int google_play_services_version = 0x7f0b0006;
 	}
 	public static final class string {
-		public static final int common_google_play_services_unknown_issue = 0x7f06001a;
+		public static final int common_google_play_services_unknown_issue = 0x7f07001a;
 	}
 	public static final class styleable {
 		public static final int[] MapAttrs = { 0x7f0100d9, 0x7f0100da, 0x7f0100db, 0x7f0100dc, 0x7f0100dd, 0x7f0100de, 0x7f0100df, 0x7f0100e0, 0x7f0100e1, 0x7f0100e2, 0x7f0100e3, 0x7f0100e4, 0x7f0100e5, 0x7f0100e6, 0x7f0100e7, 0x7f0100e8, 0x7f0100e9, 0x7f0100ea, 0x7f0100eb, 0x7f0100ec, 0x7f0100ed, 0x7f0100ee, 0x7f0100ef };

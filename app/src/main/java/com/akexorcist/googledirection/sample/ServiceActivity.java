@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -21,6 +22,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.akexorcist.googledirection.DirectionCallback;
+import com.akexorcist.googledirection.GoogleDirection;
+import com.akexorcist.googledirection.constant.TransportMode;
+import com.akexorcist.googledirection.model.Direction;
+import com.akexorcist.googledirection.model.Route;
+import com.akexorcist.googledirection.util.DirectionConverter;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -39,10 +46,11 @@ import org.json.JSONObject;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.regex.Pattern;
 
-public class ServiceActivity extends FragmentActivity implements OnMapReadyCallback {
+public class ServiceActivity extends FragmentActivity implements OnMapReadyCallback, DirectionCallback {
     //Explicit
     private GoogleMap mMap;
     private TextView nameTextView, phoneTextView, dateTextView, timeTextView;
@@ -63,6 +71,12 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     private int startTimeCountMinus = 0;
     private int endTimeCountHour, endTimeCountMinus, endTimeCountDay;
     private String strStartCountTime, endCountTime;
+
+    private String serverKey = "AIzaSyD_6HZwKgnxSOSkMWocLs4-2AViQuPBteQ";
+    private LatLng camera = new LatLng(13.667837, 100.621810);
+    private LatLng origin = new LatLng(13.668880, 100.623441);
+    private LatLng destination = new LatLng(13.678262, 100.623612);
+    private String[] colors = {"#7fff7272", "#7f31c7c5", "#7fff8a00"};
 
 
     @Override
@@ -98,6 +112,8 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
         //Button Controller
         buttonController();
+
+
 
 
     }   //Main Method
@@ -467,20 +483,25 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
                 }   // for
 
+                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                //  การสร้าง Marker of จุดรับ และ จุดส่ง
+                //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
                 //Create Marker Start
-                LatLng startLatlng = new LatLng(Double.parseDouble(jobString[7]),
+                origin = new LatLng(Double.parseDouble(jobString[7]),
                         Double.parseDouble(jobString[8]));
-                mMap.addMarker(new MarkerOptions()
-                        .position(startLatlng)
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.nobita48)));
+//                mMap.addMarker(new MarkerOptions()
+//                        .position(origin)
+//                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.nobita48)));
 
                 //Create Marker End
-                LatLng endlatLng = new LatLng(Double.parseDouble(jobString[10]),
+                destination = new LatLng(Double.parseDouble(jobString[10]),
                         Double.parseDouble(jobString[11]));
-                mMap.addMarker(new MarkerOptions()
-                        .position(endlatLng)
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.bird48)));
+//                mMap.addMarker(new MarkerOptions()
+//                        .position(destination)
+//                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.bird48)));
 
+                requestDirection();
 
                 //Show Text
                 GetPassenger getPassenger = new GetPassenger(context, jobString);
@@ -598,5 +619,44 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
 
     }  //onMapReady
+
+
+    public void requestDirection() {
+       // Snackbar.make(btnRequestDirection, "Direction Requesting...", Snackbar.LENGTH_SHORT).show();
+        GoogleDirection.withServerKey(serverKey)
+                .from(origin)
+                .to(destination)
+                .transportMode(TransportMode.WALKING)
+                .alternativeRoute(true)
+                .execute(ServiceActivity.this);
+    }   // requestDirection
+
+
+
+    @Override
+    public void onDirectionSuccess(Direction direction, String rawBody) {
+       // Snackbar.make(btnRequestDirection, "Success with status : " + direction.getStatus(), Snackbar.LENGTH_SHORT).show();
+        if (direction.isOK()) {
+            mMap.addMarker(new MarkerOptions().position(origin));
+            mMap.addMarker(new MarkerOptions().position(destination));
+
+            for (int i = 0; i < direction.getRouteList().size(); i++) {
+                Route route = direction.getRouteList().get(i);
+                String color = colors[i % colors.length];
+                ArrayList<LatLng> directionPositionList = route.getLegList().get(0).getDirectionPoint();
+                mMap.addPolyline(DirectionConverter.createPolyline(this, directionPositionList, 5, Color.parseColor(color)));
+            }
+
+          //  btnRequestDirection.setVisibility(View.GONE);
+        }
+    }   // onDirectionSuccess
+
+    @Override
+    public void onDirectionFailure(Throwable t) {
+      //  Snackbar.make(btnRequestDirection, t.getMessage(), Snackbar.LENGTH_SHORT).show();
+    }   // onDriectionFeilure
+
+
+
 
 }  //Main Class

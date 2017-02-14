@@ -30,6 +30,7 @@ public class ConfirmJob extends AppCompatActivity {
         for (int i = 0; i < loginString.length; i++) {
             Log.d("29decV1", "loginString(" + i + ")==>" + loginString[i]);
         }   // for
+
         //Login Status ==> 1
         editStatus(1);
 
@@ -131,21 +132,31 @@ public class ConfirmJob extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(ConfirmJob.this,
                 (int) System.currentTimeMillis(), intent, 0);
 
-        Uri uri = RingtoneManager.getDefaultUri(Notification.DEFAULT_SOUND);
+        //Uri uri = RingtoneManager.getDefaultUri(Notification.DEFAULT_SOUND);
+
+        Uri soundUri = Uri.parse("android.resource://" +
+                ConfirmJob.this.getPackageName() +
+                "/" +
+                R.raw.bells);
+
 
         Notification.Builder builder = new Notification.Builder(ConfirmJob.this);
         builder.setTicker("Driver ry");
         builder.setContentTitle("งานมาใหม่ค่ะ");
         builder.setContentText("กรุณาคลิ๊กที่นี้");
         builder.setSmallIcon(R.drawable.doremon48);
-        builder.setSound(uri);
+        builder.setSound(soundUri, RingtoneManager.TYPE_ALARM);
         builder.setContentIntent(pendingIntent);
+        builder.setAutoCancel(true);
 
         Notification notification = builder.build();
 
+        notification.flags |= Notification.DEFAULT_LIGHTS
+                | Notification.FLAG_AUTO_CANCEL
+                | Notification.FLAG_ONLY_ALERT_ONCE;
+
         NotificationManager notificationManager = (NotificationManager)
                 getSystemService(NOTIFICATION_SERVICE);
-        notification.flags |= Notification.FLAG_AUTO_CANCEL;
 
         notificationManager.notify(0, notification);
 

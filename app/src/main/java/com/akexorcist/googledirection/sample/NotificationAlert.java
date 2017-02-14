@@ -67,4 +67,8 @@ public class NotificationAlert extends AppCompatActivity {
 
     }   // Main Method
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
 }   // Main Class

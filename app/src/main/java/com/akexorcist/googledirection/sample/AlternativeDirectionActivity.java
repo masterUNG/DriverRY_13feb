@@ -46,7 +46,7 @@ public class AlternativeDirectionActivity extends AppCompatActivity implements O
     public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(camera, 15));
-    }
+    }   // onMapReady
 
     @Override
     public void onClick(View v) {
@@ -64,7 +64,7 @@ public class AlternativeDirectionActivity extends AppCompatActivity implements O
                 .transportMode(TransportMode.WALKING)
                 .alternativeRoute(true)
                 .execute(this);
-    }
+    }   // requestDirection
 
     @Override
     public void onDirectionSuccess(Direction direction, String rawBody) {
@@ -82,10 +82,13 @@ public class AlternativeDirectionActivity extends AppCompatActivity implements O
 
             btnRequestDirection.setVisibility(View.GONE);
         }
-    }
+    }   // onDirectionSuccess
 
     @Override
     public void onDirectionFailure(Throwable t) {
         Snackbar.make(btnRequestDirection, t.getMessage(), Snackbar.LENGTH_SHORT).show();
-    }
-}
+    }   // onDriectionFeilure
+
+
+
+}   // Main Class
