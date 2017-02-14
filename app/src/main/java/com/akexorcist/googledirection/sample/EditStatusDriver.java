@@ -24,8 +24,8 @@ public class EditStatusDriver extends AsyncTask<Void, Void, String> {
                             String idString,
                             String statusString) {
         this.context = context;
-        this.idString = idString;
-        this.statusString = statusString;
+        this.idString = idString;   // id ของ Driver ที่ต้องการเปลี่ยน Status
+        this.statusString = statusString; // Status ที่ต้องการจะเปลียน ไปเป็น
     }
 
     @Override

@@ -28,7 +28,28 @@ public class NotificationAlert extends AppCompatActivity {
         noButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+
+                try {
+
+                    //เปลี่ยน Status ที่ jobTABLE
+                    EditStatusTo2 editStatusTo2 = new EditStatusTo2(NotificationAlert.this,
+                            loginStrings[0],"0", "1");
+                    editStatusTo2.execute();
+
+                    //เปลี่ยน Status ที่ userTABLE
+                    EditStatusDriver editStatusDriver = new EditStatusDriver(NotificationAlert.this,
+                            loginStrings[0], "1");
+                    editStatusDriver.execute();
+
+                    Intent intent = new Intent(NotificationAlert.this, ConfirmJob.class);
+                    intent.putExtra("Login", loginStrings);
+                    startActivity(intent);
+                    finish();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
         });
 
@@ -41,7 +62,7 @@ public class NotificationAlert extends AppCompatActivity {
 
                 try {
 
-                    //For userTABLE_ry
+                    //For userTABLE
                     EditStatusDriver editStatusDriver = new EditStatusDriver(NotificationAlert.this,
                             loginStrings[0], "2");
                     editStatusDriver.execute();

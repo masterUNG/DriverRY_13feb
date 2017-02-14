@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(context,"Welcome" + loginStrings[3],
                             Toast.LENGTH_SHORT).show();
 
+                    //Intent to ConfirmJob
                     Intent intent = new Intent(MainActivity.this, ConfirmJob.class);
                     intent.putExtra("Login", loginStrings);
                     startActivity(intent);

@@ -37,7 +37,7 @@ public class PhotoActivity extends AppCompatActivity {
     private Button button;
     private String meterString, imagePathString, imageNameString;
     private boolean aBoolean = true;
-    private String idjobString;
+    private String idjobString, id_DriverString;
 
 
 
@@ -55,6 +55,7 @@ public class PhotoActivity extends AppCompatActivity {
         //Get Value From Intent
         idjobString = getIntent().getStringExtra("id_job");
         Log.d("14novV1", "idJob ==> " + idjobString);
+        id_DriverString = getIntent().getStringExtra("id_Driver");
 
         //Buttom Controller
         button.setOnClickListener(new View.OnClickListener() {

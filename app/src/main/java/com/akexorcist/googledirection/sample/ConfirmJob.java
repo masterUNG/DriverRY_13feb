@@ -24,8 +24,7 @@ public class ConfirmJob extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_job);
 
-
-        //Get Value of Login Pass
+        //Get Value of Login Pass จะรู้ว่าใคร Login
         loginString = getIntent().getStringArrayExtra("Login");
         for (int i = 0; i < loginString.length; i++) {
             Log.d("29decV1", "loginString(" + i + ")==>" + loginString[i]);
@@ -60,7 +59,7 @@ public class ConfirmJob extends AppCompatActivity {
 
                 //Update Status of jobTABLE
                 EditStatusTo2 editStatusTo2 = new EditStatusTo2(ConfirmJob.this,
-                        loginString[0],"0", "1");   // เกิดจากการที่ คนขับรถ ปฎิเสธงาน
+                        loginString[0], "0", "1");   // เกิดจากการที่ คนขับรถ ปฎิเสธงาน
                 editStatusTo2.execute();
 
                 Log.d("29decV2", "Result jobTABLE ==> " + editStatusTo2.get());
@@ -88,6 +87,7 @@ public class ConfirmJob extends AppCompatActivity {
 
             Log.d("2decV1", "idDriver ที่ส่งไป ==> " + loginString[0]);
 
+            // ทำการค้นหางานที่ มี id ของ Driver ตรงกับคนทีี่ Login และ Status ที่ 0 บน jobTABLE
             MyCheckJob myCheckJob = new MyCheckJob(ConfirmJob.this, loginString[0], "0");
             myCheckJob.execute();
             String s = myCheckJob.get();
@@ -108,7 +108,7 @@ public class ConfirmJob extends AppCompatActivity {
             Log.d("1decV2", "e checkJob ==> " + e.toString());
         }
 
-
+        // ทุกๆ 1 วินาทีจะทำไปเรื่อยๆ
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -132,8 +132,7 @@ public class ConfirmJob extends AppCompatActivity {
         PendingIntent pendingIntent = PendingIntent.getActivity(ConfirmJob.this,
                 (int) System.currentTimeMillis(), intent, 0);
 
-        //Uri uri = RingtoneManager.getDefaultUri(Notification.DEFAULT_SOUND);
-
+        // กำหนด การใช้เสียงเอง
         Uri soundUri = Uri.parse("android.resource://" +
                 ConfirmJob.this.getPackageName() +
                 "/" +
@@ -150,7 +149,6 @@ public class ConfirmJob extends AppCompatActivity {
         builder.setAutoCancel(true);
 
         Notification notification = builder.build();
-
         notification.flags |= Notification.DEFAULT_LIGHTS
                 | Notification.FLAG_AUTO_CANCEL
                 | Notification.FLAG_ONLY_ALERT_ONCE;
@@ -160,14 +158,16 @@ public class ConfirmJob extends AppCompatActivity {
 
         notificationManager.notify(0, notification);
 
+
     }   //myNotification
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(tagStrings[0], "onStop");
+        Log.d("1decV1", "onStop");
 
-        editStatus(0);
+        finish();
+       // editStatus(0);
 
     }
 
@@ -177,7 +177,8 @@ public class ConfirmJob extends AppCompatActivity {
 
             String s = null;
             EditStatusDriver editStatusDriver = new EditStatusDriver(ConfirmJob.this,
-                    loginString[0], Integer.toString(intStatus));
+                    loginString[0],
+                    Integer.toString(intStatus));
             editStatusDriver.execute();
 
             if (Boolean.parseBoolean(editStatusDriver.get())) {

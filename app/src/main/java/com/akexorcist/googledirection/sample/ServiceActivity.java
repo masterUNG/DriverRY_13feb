@@ -51,6 +51,7 @@ import java.util.Calendar;
 import java.util.regex.Pattern;
 
 public class ServiceActivity extends FragmentActivity implements OnMapReadyCallback, DirectionCallback {
+
     //Explicit
     private GoogleMap mMap;
     private TextView nameTextView, phoneTextView, dateTextView, timeTextView;
@@ -125,16 +126,18 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             public void onClick(View view) {
 
                 //ค่าเริ่มต้นของ aBoolean มีค่า True แต่ถ้าคลิ๊กครั้งแรก จะมีค่า False
+                // คลิกเมื่อถึงที่รับ
                 if (aBoolean) {
                     //ก่อนออกเดินทาง
 
-                    aBoolean = false;
+                    aBoolean = false;   // คลิกอีกครั้งจะไม่มาที่นี่
                     button.setText(getResources().getString(R.string.start));
 
                     //Intent to PhotoActivity
                     Intent intent = new Intent(ServiceActivity.this, PhotoActivity.class);
                     intent.putExtra("id_job", jobString[0]);
                     intent.putExtra("phone_customer", phoneString);
+                    intent.putExtra("id_Driver", loginStrings[0]);
                     startActivity(intent);
 
                 } else {
@@ -176,9 +179,16 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
         try {
 
+            //Edit Status of jobTABLE
             UpdateCountMinus updateCountMinus = new UpdateCountMinus(ServiceActivity.this,
                     loginStrings[0], "3", endCountTime, Integer.toString(countTimeMinus));
             updateCountMinus.execute();
+
+            //Edit Status of userTABLE
+            EditStatusDriver editStatusDriver = new EditStatusDriver(ServiceActivity.this,
+                    loginStrings[0], "4");
+            editStatusDriver.execute();
+
             String strResult = updateCountMinus.get();
             Log.d("19janV1", "ผลของการ Update ==> " + strResult);
 
