@@ -42,7 +42,7 @@ public class UpdateCountMinus extends AsyncTask<Void, Void, String>{
                     .add("isAdd", "true")
                     .add("ID_driver", idDriverString)
                     .add("Status", statusString)
-                    .add("EndCountTIme", endCountTime)
+                    .add("EndCountTime", endCountTime)
                     .add("CountTimeMinus", countTimeMinus)
                     .build();
             Request.Builder builder = new Request.Builder();
