@@ -64,6 +64,11 @@ public class ConfirmJob extends AppCompatActivity {
                 intent.putExtra("Login", loginString);
                 startActivity(intent);
                 finish();
+            } else if (intStatus == 3) {
+                Intent intent = new Intent(ConfirmJob.this, ServiceActivity.class);
+                intent.putExtra("Login", loginString);
+                intent.putExtra("aBoolean2", true);
+                startActivity(intent);
             }
 
 

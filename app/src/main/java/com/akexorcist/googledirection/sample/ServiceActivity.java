@@ -131,9 +131,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
                     //ก่อนออกเดินทาง
                     //Confirm Click ย้ำคิด ย้ำทำ ว่า คลิกแล้วนะ
-
                     confirmClick();
-
 
                 } else {
                     //เริ่มเดินทาง หรือหยุดเวลา ที่จับ
@@ -183,6 +181,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
                 intent.putExtra("id_job", jobString[0]);
                 intent.putExtra("phone_customer", phoneString);
                 intent.putExtra("id_Driver", loginStrings[0]);
+                aBoolean2 = true;
                 startActivity(intent);
                 dialogInterface.dismiss();
 
@@ -272,7 +271,13 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
         Log.d("14novV2", "Resume Worked");
 
+        if (!aBoolean2) {
+            aBoolean2 = getIntent().getBooleanExtra("aBoolean2", false);
+        }
+        Log.d("15febV2", "ค่าของ aBoolean2 ก่อน Check If ==> " + aBoolean2);
+        // ถ้า aBoolean2 เป็น true
         if (aBoolean2) {
+            aBoolean = false;
             afterReume();
         }
 
