@@ -199,6 +199,12 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         Log.d("19janV1", "เวลาที่เริ่มจับ ==> " + strStartCountTime);
         Log.d("19janV1", "เวลาที่หยุดจับ ==> " + endCountTime);
 
+        //แก้ Error แบบ กำปันทุบดิน
+        if (strStartCountTime == null) {
+            Log.d("19janV1", "ทำงานใน if");
+
+        }
+
         String[] startStrings = strStartCountTime.split(":");
         String[] endStrings = endCountTime.split(":");
         int startMinus = (Integer.parseInt(startStrings[0]) * 60) + Integer.parseInt(startStrings[1]);
