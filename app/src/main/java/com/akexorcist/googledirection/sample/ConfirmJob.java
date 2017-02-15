@@ -31,12 +31,33 @@ public class ConfirmJob extends AppCompatActivity {
         }   // for
 
         //Login Status ==> 1
-        editStatus(1);
+        // editStatus(1);
+
+        //Check Status on userTABLE
+        checkStatus();
 
         //Check Job
         checkJob();
 
     }   // Main Method
+
+    private void checkStatus() {
+
+        try {
+
+            FindStatusDriver findStatusDriver = new FindStatusDriver(ConfirmJob.this);
+            findStatusDriver.execute(loginString[0]);
+            String strJSON = findStatusDriver.get();
+            Log.d("15febV1", "strJSON ==> " + strJSON);
+
+
+
+
+        } catch (Exception e) {
+            Log.d("15febV1", "e checkStatus ==> " + e.toString());
+        }
+
+    }   // checkStatus
 
     @Override
     public void onBackPressed() {
@@ -167,7 +188,7 @@ public class ConfirmJob extends AppCompatActivity {
         Log.d("1decV1", "onStop");
 
         finish();
-       // editStatus(0);
+        // editStatus(0);
 
     }
 
