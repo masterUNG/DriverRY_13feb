@@ -15,7 +15,7 @@ ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src
 		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:6:5-79
-MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:19:5-78
 	android:name
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:6:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
@@ -32,8 +32,8 @@ ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:9:22-66
 uses-permission#android.permission.INTERNET
 ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:10:5-67
-MERGED from [com.akexorcist:googleDirectionLibrary:1.0.5] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.akexorcist/googleDirectionLibrary/1.0.5/AndroidManifest.xml:11:5-67
-MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/AndroidManifest.xml:20:5-66
+MERGED from [com.akexorcist:googleDirectionLibrary:1.0.5] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/googleDirectionLibrary/build/intermediates/bundles/default/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:20:5-66
 	android:name
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:10:22-64
 uses-permission#android.permission.SEND_SMS
@@ -58,28 +58,28 @@ ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:15:22-77
 uses-feature#0x00020000
 ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:17:5-19:35
-MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/AndroidManifest.xml:21:5-77
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:21:5-77
 	android:glEsVersion
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:18:9-41
 	android:required
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:19:9-32
 application
 ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:21:5-70:19
-MERGED from [com.android.support:design:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:transition:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/AndroidManifest.xml:24:5-19
-MERGED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:support-v4:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:design:25.0.1] /Users/masterUNG/.android/build-cache/5c08961d7d87816e2f9d91ba59db54d0a48e169a/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/masterUNG/.android/build-cache/b7a656f37c504468329a064dc4081411bd449acc/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/masterUNG/.android/build-cache/de29b4a79e15924df10092599c36292079b7a777/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/masterUNG/.android/build-cache/3cf28295eb7e6158601fb7ba19c7785c192e2164/output/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:transition:25.0.1] /Users/masterUNG/.android/build-cache/978c91d28490bed91f47b754eee42c18d25103b3/output/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /Users/masterUNG/.android/build-cache/9dc648d372ba460b42ee5e5d1235f42410af5bc0/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.0.1] /Users/masterUNG/.android/build-cache/0b83014ab1099c6a77a7c9687598fd1cfd693c11/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.1] /Users/masterUNG/.android/build-cache/ab696ebe5fc5345fc6e69971ce3d7f26b891d988/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.1] /Users/masterUNG/.android/build-cache/74c3781ec19774697e42e25cf17d506c2ce6dfb1/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.1] /Users/masterUNG/.android/build-cache/b2f17a3ee37ccac89fbd528bdd7d4e6ae7bc50c5/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.1] /Users/masterUNG/.android/build-cache/ba772731407dcb87ac6378797341356818e2999e/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.0.1] /Users/masterUNG/.android/build-cache/1e26868e8785d6c44dd9281c3a4644edf81671f4/output/AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:24:9-41
 	android:supportsRtl
@@ -132,7 +132,7 @@ ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:48:13-57
 meta-data#com.google.android.gms.version
 ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:52:9-54:69
-MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/AndroidManifest.xml:20:9-121
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/AndroidManifest.xml:20:9-121
 	android:value
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:54:13-66
 	android:name
@@ -167,25 +167,25 @@ ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src
 		ADDED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml:67:13-58
 uses-sdk
 INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.akexorcist:googleDirectionLibrary:1.0.5] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.akexorcist/googleDirectionLibrary/1.0.5/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:design:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.1/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.1/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.1/AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:recyclerview-v7:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.1/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.1/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/10.0.1/AndroidManifest.xml:23:5-42
-MERGED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/AndroidManifest.xml:17:5-42
-MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/10.0.1/AndroidManifest.xml:3:5-42
-MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/AndroidManifest.xml:17:5-42
-MERGED from [com.android.support:support-v4:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.1/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.1/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.1/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.1/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.1/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.1/AndroidManifest.xml:21:5-23:58
+MERGED from [com.akexorcist:googleDirectionLibrary:1.0.5] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/googleDirectionLibrary/build/intermediates/bundles/default/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.0.1] /Users/masterUNG/.android/build-cache/5c08961d7d87816e2f9d91ba59db54d0a48e169a/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.0.1] /Users/masterUNG/.android/build-cache/b7a656f37c504468329a064dc4081411bd449acc/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.0.1] /Users/masterUNG/.android/build-cache/de29b4a79e15924df10092599c36292079b7a777/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.1] /Users/masterUNG/.android/build-cache/3cf28295eb7e6158601fb7ba19c7785c192e2164/output/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:recyclerview-v7:25.0.1] /Users/masterUNG/.android/build-cache/3f2a951763a9c349d4640b145408238712da9283/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.0.1] /Users/masterUNG/.android/build-cache/978c91d28490bed91f47b754eee42c18d25103b3/output/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:10.0.1] /Users/masterUNG/.android/build-cache/d54221ca316ec4a370791d6694fed223bbcdc340/output/AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:17:5-42
+MERGED from [com.google.android.gms:play-services-tasks:10.0.1] /Users/masterUNG/.android/build-cache/9dc648d372ba460b42ee5e5d1235f42410af5bc0/output/AndroidManifest.xml:3:5-42
+MERGED from [com.google.android.gms:play-services-basement:10.0.1] /Users/masterUNG/.android/build-cache/507b917e2252482878e9387cee3e017895d5408a/output/AndroidManifest.xml:17:5-42
+MERGED from [com.android.support:support-v4:25.0.1] /Users/masterUNG/.android/build-cache/0b83014ab1099c6a77a7c9687598fd1cfd693c11/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.1] /Users/masterUNG/.android/build-cache/ab696ebe5fc5345fc6e69971ce3d7f26b891d988/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.1] /Users/masterUNG/.android/build-cache/74c3781ec19774697e42e25cf17d506c2ce6dfb1/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.0.1] /Users/masterUNG/.android/build-cache/b2f17a3ee37ccac89fbd528bdd7d4e6ae7bc50c5/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.1] /Users/masterUNG/.android/build-cache/ba772731407dcb87ac6378797341356818e2999e/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.0.1] /Users/masterUNG/.android/build-cache/1e26868e8785d6c44dd9281c3a4644edf81671f4/output/AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.android.support/design/25.0.1/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.0.1] /Users/masterUNG/.android/build-cache/5c08961d7d87816e2f9d91ba59db54d0a48e169a/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml
@@ -193,10 +193,10 @@ MERGED from [com.android.support:support-compat:25.0.1] /Users/masterUNG/MyWorks
 		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/AndroidManifest.xml
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:10.0.1] /Users/masterUNG/.android/build-cache/255829816c642a8405d9bded49fe28171881b2f3/output/AndroidManifest.xml:19:19-85
