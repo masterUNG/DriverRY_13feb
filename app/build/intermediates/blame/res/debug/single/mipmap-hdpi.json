@@ -1,6 +1,18 @@
 [
     {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/mipmap-hdpi/mk_origin.png",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/res/mipmap-hdpi/mk_origin.png"
+    },
+    {
         "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
         "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/mipmap-hdpi/mk_driver.png",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/res/mipmap-hdpi/mk_driver.png"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/mipmap-hdpi/mk_desination.png",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/res/mipmap-hdpi/mk_desination.png"
     }
 ]

@@ -52,7 +52,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.regex.Pattern;
 
-public class ServiceActivity extends FragmentActivity implements OnMapReadyCallback, DirectionCallback {
+public class ServiceActivity extends FragmentActivity implements OnMapReadyCallback, DirectionCallback, View.OnClickListener {
 
     //Explicit
     private GoogleMap mMap;
@@ -79,7 +79,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     private LatLng camera = new LatLng(13.667837, 100.621810);
     private LatLng origin = new LatLng(13.668880, 100.623441);
     private LatLng destination = new LatLng(13.678262, 100.623612);
-    private String[] colors = {"#7fff7272", "#7f31c7c5", "#7fff8a00"};
+    private String[] colors = {"#7f000077", "#7f31c7c5", "#7fff8a00"};
 
 
     @Override
@@ -91,28 +91,19 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         //Bind WIdget
         bindWidget();
 
-        //Get Value From Intent
-        loginStrings = getIntent().getStringArrayExtra("Login");
-        Log.d("28decV2", "id_Passenger ==>" + loginStrings[0]);
+        //Get Value From Intent โดยการดึงข้อมูล ของผู้ที่กำลัง Login อยู่นั้นเอง
+        getValueFromIntent();
 
 
         //Get Value From JSON
-        myConstant = new MyConstant();
-        GetJob getJob = new GetJob(ServiceActivity.this);
-        getJob.execute(myConstant.getUrlGetJobWhereID());
+        getValueFromJSON();
 
 
         //Setup For Get Location
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        criteria = new Criteria();
-        criteria.setAccuracy(Criteria.ACCURACY_FINE);
-        criteria.setAltitudeRequired(false);
-        criteria.setBearingRequired(false);
+        setupForGetLocation();
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        //Setup MapFragment
+        setupMapFragment();
 
         //Button Controller
         buttonController();
@@ -120,38 +111,42 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
     }   //Main Method
 
+    private void setupMapFragment() {
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
+
+    private void setupForGetLocation() {
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        criteria = new Criteria();
+        criteria.setAccuracy(Criteria.ACCURACY_FINE);
+        criteria.setAltitudeRequired(false);
+        criteria.setBearingRequired(false);
+    }
+
+    private void getValueFromJSON() {
+        myConstant = new MyConstant();
+
+        try {
+
+            GetJob getJob = new GetJob(ServiceActivity.this);
+            getJob.execute(myConstant.getUrlGetJobWhereID());
+
+        } catch (Exception e) {
+            Log.d("13MarchV1", "e getValueFromJSON ==> " + e.toString());
+        }
+
+    }   // getValue
+
+    private void getValueFromIntent() {
+        loginStrings = getIntent().getStringArrayExtra("Login");
+        Log.d("28decV2", "id_Passenger ==>" + loginStrings[0]);
+    }   // getValueFromIntent
+
     private void buttonController() {
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                //ค่าเริ่มต้นของ aBoolean มีค่า True แต่ถ้าคลิ๊กครั้งแรก จะมีค่า False
-                // คลิกเมื่อถึงที่รับ
-                if (aBoolean) {
-
-                    //ก่อนออกเดินทาง
-                    //Confirm Click ย้ำคิด ย้ำทำ ว่า คลิกแล้วนะ
-                    confirmClick();
-
-                } else {
-                    //เริ่มเดินทาง หรือหยุดเวลา ที่จับ
-                    Calendar calendar = Calendar.getInstance();
-                    DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-                    endCountTime = dateFormat.format(calendar.getTime());
-                    Log.d("28decV2", "endcountTime หรือเวลาออกเดินทาง ==> " + endCountTime);
-
-                    //หาจำนวนนาที ที่หยุดรอ และ อัพเดทไปที่ jobTABLE บน Server
-                    findWaitMinus();
-
-
-                }   //if
-
-                Log.d("28decV2", "aBoolean ==> " + aBoolean);
-
-
-            }   //onClick
-        });
+        button.setOnClickListener(ServiceActivity.this);
 
     }   // buttonController
 
@@ -165,7 +160,6 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
 
-
                 dialogInterface.dismiss();
             }
         });
@@ -175,6 +169,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
                 aBoolean = false;   // คลิกอีกครั้งจะไม่มาที่นี่
                 aBoolean2 = true;
+                //เปลี่ยน Label Button เป็น ออกเดินทาง
                 button.setText(getResources().getString(R.string.start));
 
                 //Intent to PhotoActivity
@@ -246,7 +241,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         timeTextView = (TextView) findViewById(R.id.textView6);
         imageView = (ImageView) findViewById(R.id.imageView2);
         button = (Button) findViewById(R.id.button4);
-    }
+    }   // bindWidget
 
     @Override
     public void onBackPressed() {
@@ -256,28 +251,12 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     @Override
     protected void onResume() {
         super.onResume();
-
-        //FOr Find Location by Network
-        Location networkLocation = myFindLocation(LocationManager.NETWORK_PROVIDER);
-        if (networkLocation != null) {
-            latADouble = networkLocation.getLatitude();
-            lngADouble = networkLocation.getLongitude();
-
-        }
-
-        //For find Location by GPS
-        Location gpsLocation = myFindLocation(LocationManager.GPS_PROVIDER);
-        if (gpsLocation != null) {
-            latADouble = gpsLocation.getLatitude();
-            lngADouble = gpsLocation.getLongitude();
-
-        }
-
-        Log.d("8novV1", "Lat ==> " + latADouble);
-        Log.d("8novV1", "lug ==> " + lngADouble);
-
         Log.d("14novV2", "Resume Worked");
 
+        //For Find Location
+        forFindLocation();
+
+        //Resume After Take Photo
         if (!aBoolean2) {
             aBoolean2 = getIntent().getBooleanExtra("aBoolean2", false);
         }
@@ -288,7 +267,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             afterReume();
         }
 
-
+        //หลังจาก ไปถ่ายรูป aBoolean จะเป็น False
         if (!aBoolean) {
 
             Log.d("14novV2", "Min ==>" + 0);
@@ -311,6 +290,27 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
 
     }   // onResume
+
+    private void forFindLocation() {
+        //by Network
+        Location networkLocation = myFindLocation(LocationManager.NETWORK_PROVIDER);
+        if (networkLocation != null) {
+            latADouble = networkLocation.getLatitude();
+            lngADouble = networkLocation.getLongitude();
+
+        }
+
+        //by GPS
+        Location gpsLocation = myFindLocation(LocationManager.GPS_PROVIDER);
+        if (gpsLocation != null) {
+            latADouble = gpsLocation.getLatitude();
+            lngADouble = gpsLocation.getLongitude();
+
+        }
+
+        Log.d("8novV1", "Lat ==> " + latADouble);
+        Log.d("8novV1", "lug ==> " + lngADouble);
+    }
 
     //คือ methodที่ทำงาน หลังจาก ถ่ายรูปมิเตอร์ เรียบร้อยแล้ว
 
@@ -483,7 +483,41 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         }
     };
 
+    @Override
+    public void onClick(View view) {
 
+        //ค่าเริ่มต้นของ aBoolean มีค่า True แต่ถ้าคลิ๊กครั้งแรก จะมีค่า False
+        // คลิกเมื่อถึงที่รับ
+        if (aBoolean) {
+
+            //ก่อนออกเดินทาง
+            //Confirm Click ย้ำคิด ย้ำทำ ว่า คลิกแล้วนะ
+            confirmClick();
+
+        } else {
+
+            Log.d("13MarchV1", "นี่คือ สภาวะ คลิกออกเดินทาง");
+
+            //เริ่มเดินทาง หรือหยุดเวลา ที่จับ
+            Calendar calendar = Calendar.getInstance();
+            DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+            endCountTime = dateFormat.format(calendar.getTime());
+            Log.d("28decV2", "endcountTime หรือเวลาออกเดินทาง ==> " + endCountTime);
+
+            //หาจำนวนนาที ที่หยุดรอ และ อัพเดทไปที่ jobTABLE บน Server
+            findWaitMinus();
+
+
+        }   //if
+
+        Log.d("28decV2", "aBoolean ==> " + aBoolean);
+
+    }   // onClick
+
+
+    // GetJob จะส่งค่า id ของคนขับ และ Status ที่มีค่าเท่ากับ 2 ไป
+    // Select Where ที่ Table jobTABLE
+    // เพื่อหา Record ที่ คนขับคนนี่รับงานอยู่
     private class GetJob extends AsyncTask<String, Void, String> {
 
 
@@ -516,7 +550,6 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
                 return null;
             }
 
-
         }   //doInBack
 
         @Override
@@ -548,16 +581,10 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
                 //Create Marker Start
                 origin = new LatLng(Double.parseDouble(jobString[7]),
                         Double.parseDouble(jobString[8]));
-//                mMap.addMarker(new MarkerOptions()
-//                        .position(origin)
-//                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.nobita48)));
 
                 //Create Marker End
                 destination = new LatLng(Double.parseDouble(jobString[10]),
                         Double.parseDouble(jobString[11]));
-//                mMap.addMarker(new MarkerOptions()
-//                        .position(destination)
-//                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.bird48)));
 
                 requestDirection();
 
@@ -667,7 +694,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             //Create Marker Driver
             mMap.addMarker(new MarkerOptions()
                     .position(latLng)
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.humen)));
+                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_driver)));
 
 
         } catch (Exception e) {
@@ -678,13 +705,14 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
     }  //onMapReady
 
-
+    //  Method ที่ทำหน้าที่ แนะนำเส้นทาง การไปได้ระหว่างจุดสองจุด ไม่เกิน 3 เส้น
     public void requestDirection() {
+
         // Snackbar.make(btnRequestDirection, "Direction Requesting...", Snackbar.LENGTH_SHORT).show();
         GoogleDirection.withServerKey(serverKey)
                 .from(origin)
                 .to(destination)
-                .transportMode(TransportMode.WALKING)
+                .transportMode(TransportMode.DRIVING)
                 .alternativeRoute(true)
                 .execute(ServiceActivity.this);
     }   // requestDirection
@@ -694,15 +722,32 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     public void onDirectionSuccess(Direction direction, String rawBody) {
         // Snackbar.make(btnRequestDirection, "Success with status : " + direction.getStatus(), Snackbar.LENGTH_SHORT).show();
         if (direction.isOK()) {
-            mMap.addMarker(new MarkerOptions().position(origin));
-            mMap.addMarker(new MarkerOptions().position(destination));
 
-            for (int i = 0; i < direction.getRouteList().size(); i++) {
+            //นี่คือการสร้าง Marker ของจุดไปรับลูกค้า Origin
+            //และ จุดไปส่งลูกค้า Destination
+            mMap.addMarker(new MarkerOptions()
+                    .position(origin)
+            .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_origin)));
+
+            mMap.addMarker(new MarkerOptions()
+                    .position(destination)
+            .icon(BitmapDescriptorFactory.fromResource(R.mipmap.mk_desination)));
+
+// ถ้าต้องการ Routing จำนวน 3 เส้น ให้ใช้ ตรงนี้
+           // for (int i = 0; i < direction.getRouteList().size(); i++) {
+
+            // ต้องการ Routing เพียงเส้นใกล้สุดเส้นเดียว
+            for (int i = 0; i < 1; i++) {
                 Route route = direction.getRouteList().get(i);
                 String color = colors[i % colors.length];
                 ArrayList<LatLng> directionPositionList = route.getLegList().get(0).getDirectionPoint();
                 mMap.addPolyline(DirectionConverter.createPolyline(this, directionPositionList, 5, Color.parseColor(color)));
-            }
+
+                Log.d("13MarchV1", "ระยะ ระหว่างจุด ==> " + route.getLegList().get(0).getDistance().getText());
+                Log.d("13MarchV1", "เวลา ระหว่างจุด ==> " + route.getLegList().get(0).getDuration().getText());
+
+
+            }   // for
 
             //  btnRequestDirection.setVisibility(View.GONE);
         }
