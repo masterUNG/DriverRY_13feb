@@ -87,6 +87,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_service_layout);
 
+
         //Bind WIdget
         bindWidget();
 
