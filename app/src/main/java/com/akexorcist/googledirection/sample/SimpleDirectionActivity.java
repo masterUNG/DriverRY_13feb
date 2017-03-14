@@ -21,7 +21,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
-public class SimpleDirectionActivity extends AppCompatActivity implements OnMapReadyCallback, View.OnClickListener, DirectionCallback {
+public class SimpleDirectionActivity extends AppCompatActivity implements OnMapReadyCallback,
+        View.OnClickListener, DirectionCallback {
     private Button btnRequestDirection;
     private GoogleMap googleMap;
     private String serverKey = "AIzaSyD_6HZwKgnxSOSkMWocLs4-2AViQuPBteQ";
@@ -38,7 +39,8 @@ public class SimpleDirectionActivity extends AppCompatActivity implements OnMapR
         btnRequestDirection.setOnClickListener(this);
 
         ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
-    }
+
+    }   // Main Method
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -56,6 +58,7 @@ public class SimpleDirectionActivity extends AppCompatActivity implements OnMapR
 
     public void requestDirection() {
         Snackbar.make(btnRequestDirection, "Direction Requesting...", Snackbar.LENGTH_SHORT).show();
+
         GoogleDirection.withServerKey(serverKey)
                 .from(origin)
                 .to(destination)
@@ -65,7 +68,9 @@ public class SimpleDirectionActivity extends AppCompatActivity implements OnMapR
 
     @Override
     public void onDirectionSuccess(Direction direction, String rawBody) {
+
         Snackbar.make(btnRequestDirection, "Success with status : " + direction.getStatus(), Snackbar.LENGTH_SHORT).show();
+
         if (direction.isOK()) {
             googleMap.addMarker(new MarkerOptions().position(origin));
             googleMap.addMarker(new MarkerOptions().position(destination));
