@@ -8,6 +8,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -39,6 +40,7 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
     private double userLatADouble = 0, userLngADouble = 0;
     private Marker destinationMarker, userMarker;
     private String serverKey = "AIzaSyD_6HZwKgnxSOSkMWocLs4-2AViQuPBteQ";
+    private boolean aBoolean = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +89,8 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         Log.d("14MarchV1", "userLng ==> " + userLngADouble);
 
 
+
+
     }
 
     @Override
@@ -94,6 +98,7 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         super.onStop();
 
         locationManager.removeUpdates(locationListener);
+        aBoolean = false;
 
     }
 
@@ -181,9 +186,6 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
         //Create Map and Setup Center Map
         createMapAndSetup();
 
-        //Create Marker
-        createMarker();
-
         //Create Routing Map
         createRoutingMap();
 
@@ -192,17 +194,41 @@ public class MonitorActivity extends FragmentActivity implements OnMapReadyCallb
 
     private void createRoutingMap() {
 
-        LatLng latLng = new LatLng(userLatADouble, userLngADouble);
+        try {
 
-        GoogleDirection.withServerKey(serverKey)
-                .from(latLng)
-                .to(destinationLatLng)
-                .transportMode(TransportMode.DRIVING)
-                .execute(this);
+            mMap.clear();
+
+
+            createMarker();
+
+            LatLng latLng = new LatLng(userLatADouble, userLngADouble);
+
+            GoogleDirection.withServerKey(serverKey)
+                    .from(latLng)
+                    .to(destinationLatLng)
+                    .transportMode(TransportMode.DRIVING)
+                    .execute(this);
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (aBoolean) {
+                        createRoutingMap();
+                    }
+                }
+            }, 3000);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
 
     }   // createRoutingMap
+
+
 
     private void createMarker() {
 
