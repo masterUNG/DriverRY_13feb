@@ -8,20 +8,20 @@
         "source": "/Users/masterUNG/.android/build-cache/5c08961d7d87816e2f9d91ba59db54d0a48e169a/output/res/layout/design_bottom_sheet_dialog.xml"
     },
     {
-        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
-        "source": "/Users/masterUNG/.android/build-cache/b7a656f37c504468329a064dc4081411bd449acc/output/res/layout/notification_template_lines_media.xml"
-    },
-    {
         "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
         "source": "/Users/masterUNG/.android/build-cache/b7a656f37c504468329a064dc4081411bd449acc/output/res/layout/notification_media_action.xml"
     },
     {
-        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/my_service_layout.xml",
-        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/res/layout/my_service_layout.xml"
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
+        "source": "/Users/masterUNG/.android/build-cache/b7a656f37c504468329a064dc4081411bd449acc/output/res/layout/notification_template_lines_media.xml"
     },
     {
         "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
         "source": "/Users/masterUNG/.android/build-cache/5c08961d7d87816e2f9d91ba59db54d0a48e169a/output/res/layout/design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/my_service_layout.xml",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/res/layout/my_service_layout.xml"
     },
     {
         "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
@@ -130,6 +130,10 @@
     {
         "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
         "source": "/Users/masterUNG/.android/build-cache/b7a656f37c504468329a064dc4081411bd449acc/output/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/activity_monitor.xml",
+        "source": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/src/main/res/layout/activity_monitor.xml"
     },
     {
         "merged": "/Users/masterUNG/MyWorkspace/Wrokspace_Project/DriverRY_13feb/app/build/intermediates/res/merged/debug/layout/activity_photo.xml",

@@ -69,7 +69,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
     private LatLng latLng;
     private int hourWaitStartAnInt, minusWaitStartInt,
             hourWaitEndAnInt, minusWaitEndAnInt;
-    private boolean aBoolean = true, aBoolean2 = false;
+    private boolean aBoolean = true, aBoolean2 = false, aBoolean3 = true;
     private int startTimeCountHour = 0;
     private int startTimeCountMinus = 0;
     private int endTimeCountHour, endTimeCountMinus, endTimeCountDay;
@@ -226,6 +226,12 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
 
             String strResult = updateCountMinus.get();
             Log.d("19janV1", "ผลของการ Update ==> " + strResult);
+
+
+            Intent intent = new Intent(ServiceActivity.this, MonitorActivity.class);
+            intent.putExtra("Login", loginStrings);
+            startActivity(intent);
+            finish();
 
         } catch (Exception e) {
             Log.d("19janV1", "e ==> " + e.toString());
@@ -504,7 +510,7 @@ public class ServiceActivity extends FragmentActivity implements OnMapReadyCallb
             endCountTime = dateFormat.format(calendar.getTime());
             Log.d("28decV2", "endcountTime หรือเวลาออกเดินทาง ==> " + endCountTime);
 
-            //หาจำนวนนาที ที่หยุดรอ และ อัพเดทไปที่ jobTABLE บน Server
+
             findWaitMinus();
 
 
